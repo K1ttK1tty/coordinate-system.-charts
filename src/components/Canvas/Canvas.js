@@ -1,23 +1,21 @@
-import React from "react";
+import React from 'react';
 import PropTypes from "prop-types";
+import { useRef } from 'react';
+const Canvas = function ({ draw, height, width, getMousePosition}) {
+    const canvas = React.useRef();
+    React.useEffect(() => {
+        const context = canvas.current.getContext("2d");
+        const canvasWidth = width;
+        const canvasHeight = height;
+        draw(context, canvasWidth, canvasHeight);
+    });
 
-const Canvas = ({ draw, height, width }) => {
-  const canvas = React.useRef();
+    Canvas.propTypes = {
+        draw: PropTypes.func.isRequired,
+        height: PropTypes.number.isRequired,
+        width: PropTypes.number.isRequired,
+    };
 
-  React.useEffect(() => {
-    const context = canvas.current.getContext("2d");
-    const canvasWidth = width;
-    const canvasHeight = height;
-    draw(context, canvasWidth, canvasHeight);
-  });
-
-  return <canvas ref={canvas} height={height} width={width} />;
+    return <canvas onMouseMove={getMousePosition} ref={canvas} height={height} width={width} />;
 };
-
-Canvas.propTypes = {
-  draw: PropTypes.func.isRequired,
-  height: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-};
-
 export default Canvas;
