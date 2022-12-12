@@ -32,20 +32,33 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
         context.stroke();
         context.closePath();
         context.fillText('y', canvasWidth / 2 - 15, 15)
-        context.fillText('x', canvasWidth - 20, canvasHeight / 2 - 5)
+        context.fillText('t', canvasWidth - 20, canvasHeight / 2 - 5)
 
-        const frequency = 1;
+        const frequency = 1/2;
         const A = 1;
         const phase = 0;
-        const radian = phase * Math.PI / 180;
-        for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.01) {
+        let radian = phase * Math.PI / 180;
+        for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.05) {
             const x = (i - stepX) / scaleX;
             // const y = Math.pow(x,1000);
             // const y = Math.pow(x, 2);
             const argInSin = 2 * Math.PI * x * frequency;
 
             const y = A * Math.sin(argInSin + radian);
-            context.fillStyle = "blue";
+            context.fillStyle = "black";
+            context.fillRect(x * scaleX + stepY - 1, stepX - scaleY * y, 2, 2)
+
+        }
+        radian = -90 * Math.PI / 180;
+
+        for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.05) {
+            const x = (i - stepX) / scaleX;
+            // const y = Math.pow(x,1000);
+            // const y = Math.pow(x, 2);
+            const argInSin = 2 * Math.PI * x * frequency;
+
+            const y = A * Math.sin(argInSin + radian);
+            context.fillStyle = "rgb(255, 41, 41)";
             context.fillRect(x * scaleX + stepY - 1, stepX - scaleY * y, 2, 2)
 
         }

@@ -1,0 +1,45 @@
+.navMenu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    padding: 17px;
+}
+.menuItems {
+    display: flex;
+    list-style: none;
+}
+.logo {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.menuItem {
+    font-size: 18px;
+    width: 110px;
+}
+.linkToPage::after {
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    width: 100%;
+    content: "";
+    height: 2px;
+    background: black;
+    border-radius: 20%;
+    transition: 0.3s;
+    scale: 0;
+}
+.linkToPage:hover::after {
+    scale: 1;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.linkToPage {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
