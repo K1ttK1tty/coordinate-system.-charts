@@ -8,7 +8,6 @@ const Menu = function () {
                 <a href="#" className={cl.logo}>sinResearch</a>
                 <ul className={cl.menuItems}>
                     <li className={cl.menuItem}><Link className={cl.linkToPage} to="/main">Главная</Link></li>
-                    <li className={cl.menuItem}><Link className={cl.linkToPage} to="/main">Теория</Link></li>
                     <li className={cl.menuItem}><Link className={cl.linkToPage} to="/test">Тест</Link></li>
                 </ul>
                 <div></div>

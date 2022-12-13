@@ -4,7 +4,15 @@
     position: fixed;
     justify-content: space-between;
     width: 100%;
-    padding: 17px;
+    padding: 15px;
+    padding-top: 13px;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8743872549019608) 0%,
+        rgba(255, 255, 255, 0.8491771708683473) 66%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 .menuItems {
     display: flex;
@@ -17,7 +25,7 @@
 }
 
 .menuItem {
-    font-size: 18px;
+    font-size: 20px;
     width: 110px;
 }
 .linkToPage::after {

@@ -6,10 +6,8 @@ const App = function () {
 
     return (
         <BrowserRouter>
-            <Menu/>
 
-
-
+            <Menu />
             <AppRouter />
 
         </BrowserRouter>

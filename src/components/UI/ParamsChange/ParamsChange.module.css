@@ -1,0 +1,20 @@
+.wrap{
+    height: 100px;
+    margin: 0px auto 30px;
+}
+.title{
+    text-align: center;
+    color:black;
+    font-size: 27px;
+}
+.listAmpl{
+    list-style: none;
+    display: flex;
+}
+.titleA{
+    margin-right: 5px;
+}
+li{
+    margin-right: 12px;
+}
+

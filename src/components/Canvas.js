@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, scaleX, stepX, stepY }) {
+const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, scaleX, stepX, stepY, args, }) {
     const canvas = React.useRef();
 
     const draw = (context, canvasWidth, canvasHeight) => {
@@ -33,32 +32,15 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
         context.closePath();
         context.fillText('y', canvasWidth / 2 - 15, 15)
         context.fillText('t', canvasWidth - 20, canvasHeight / 2 - 5)
-
-        const frequency = 1/2;
-        const A = 1;
-        const phase = 0;
+        let frequency = args.frequency;
+        let A = args.A;
+        let phase = args.phase;
         let radian = phase * Math.PI / 180;
         for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.05) {
             const x = (i - stepX) / scaleX;
-            // const y = Math.pow(x,1000);
-            // const y = Math.pow(x, 2);
             const argInSin = 2 * Math.PI * x * frequency;
-
             const y = A * Math.sin(argInSin + radian);
             context.fillStyle = "black";
-            context.fillRect(x * scaleX + stepY - 1, stepX - scaleY * y, 2, 2)
-
-        }
-        radian = -90 * Math.PI / 180;
-
-        for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.05) {
-            const x = (i - stepX) / scaleX;
-            // const y = Math.pow(x,1000);
-            // const y = Math.pow(x, 2);
-            const argInSin = 2 * Math.PI * x * frequency;
-
-            const y = A * Math.sin(argInSin + radian);
-            context.fillStyle = "rgb(255, 41, 41)";
             context.fillRect(x * scaleX + stepY - 1, stepX - scaleY * y, 2, 2)
 
         }
@@ -76,6 +58,7 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
     // };
 
 
-    return <canvas onMouseMove={getMousePosition} className='canvas' ref={canvas} height={canvasHeight} width={canvasWidth} />
+    return <canvas className='canvas' ref={canvas} height={canvasHeight} width={canvasWidth} /> 
+    // onMouseMove={getMousePosition}
 };
 export default Canvas;

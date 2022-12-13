@@ -18,6 +18,7 @@ html {
     padding-top: 80px;
     max-width: 1800px;
     margin: 0px auto;
+    padding-bottom: 90px;
 }
 .title {
     color: black;
@@ -40,6 +41,11 @@ html {
     max-width: 72%;
     margin: 0px auto;
 }
+@media (max-width: 769px) {
+    .article {
+        max-width: 90%;
+    }
+}
 .mb16 {
     margin-bottom: 16px;
 }
@@ -60,4 +66,9 @@ html {
     color: black;
     margin-bottom: 20px;
     /* color: rgb(255, 41, 41); */
+}
+
+.canvas {
+    width: 70%;
+    /* margin: 0px auto 50px; */
 }
