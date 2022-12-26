@@ -1,9 +1,10 @@
 import React from 'react';
-const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, scaleX, stepX, stepY, args, }) {
+const Canvas = function ({ canvasWidth, canvasHeight, scaleY, scaleX, stepX, stepY, args, }) {
     const canvas = React.useRef();
-
     const draw = (context, canvasWidth, canvasHeight) => {
+
         // линии координат
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
         context.beginPath();
         context.font = `${scaleX / 4}px Arial` // еще разные расположения текста
         context.fillStyle = "#000";
@@ -36,6 +37,7 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
         let A = args.A;
         let phase = args.phase;
         let radian = phase * Math.PI / 180;
+
         for (let i = -canvasWidth / 5; i <= canvasWidth; i = i + 0.05) {
             const x = (i - stepX) / scaleX;
             const argInSin = 2 * Math.PI * x * frequency;
@@ -44,6 +46,7 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
             context.fillRect(x * scaleX + stepY - 1, stepX - scaleY * y, 2, 2)
 
         }
+
     }
 
     React.useEffect(() => {
@@ -58,7 +61,7 @@ const Canvas = function ({ getMousePosition, canvasWidth, canvasHeight, scaleY, 
     // };
 
 
-    return <canvas className='canvas' ref={canvas} height={canvasHeight} width={canvasWidth} /> 
+    return <canvas className='canvas' ref={canvas} height={canvasHeight} width={canvasWidth} />
     // onMouseMove={getMousePosition}
 };
 export default Canvas;

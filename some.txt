@@ -1,0 +1,12 @@
+// function getMousePosition(e) {
+    //     const positions = e.target.getBoundingClientRect();
+    //     const xPosition800 = Math.round((e.clientX - positions.left - canvasWidth / 2) * 1000 / canvasWidth) - 1;
+    //     const yPosition800 = Math.round((-e.clientY + positions.top + canvasHeight / 2) * 1.25);
+    //     setXYPosition([xPosition800, yPosition800]);
+    // }
+
+
+
+{/* getMousePosition={getMousePosition} */}
+            {/* <div className="position">X={xyPosition[0]}</div>
+            <div className="position">Y={xyPosition[1]}</div> */}
