@@ -1,7 +1,6 @@
 import React from 'react';
 import cl from './Test.module.css'
 const Test = function () {
-
     return (
         <div className={cl.page}>
             <h2 className={cl.title}>Тест</h2>

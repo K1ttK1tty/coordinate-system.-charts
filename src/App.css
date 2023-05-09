@@ -14,6 +14,9 @@ html {
     width: 100%;
     height: 100%;
 }
+input {
+    max-width: 120px;
+}
 .App {
     padding-top: 80px;
     max-width: 1800px;
