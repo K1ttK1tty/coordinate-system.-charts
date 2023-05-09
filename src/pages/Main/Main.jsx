@@ -15,7 +15,7 @@ const Main = memo(function () {
     const stepX = Math.round(canvasHeight / scaleY / 2) * scaleY; // нахождение шага прмерно в середине и домножение номера шага на сам шаг, чтобы получить значение, находящееся примерно в середине полотна
     const stepY = Math.round(canvasWidth / scaleX / 2) * scaleX;
     const [args, setArgs] = useState({ frequency: 0.5, A: 1, phase: 0, start: -5, end: 5 });
-
+ 
     function getMousePosition(e) {
         const positions = e.target.getBoundingClientRect();
         const widthScale = 1000 / positions.width; // 1.25
